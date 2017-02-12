@@ -27,7 +27,7 @@ namespace LiveSplit.SaboteurTracker
         }
         public string UpdateURL
         {
-            get { return ""; }
+            get { return "https://raw.githubusercontent.com/SuiMachine/LiveSplit.SaboteurPerkTracker/master/"; }
         }
         public Version Version
         {
@@ -35,7 +35,7 @@ namespace LiveSplit.SaboteurTracker
         }
         public string XMLURL
         {
-            get { return UpdateURL + "Components/update.LiveSplit.Saboteur.xml"; }
+            get { return UpdateURL + "Components/update.LiveSplit.SaboteurTracker.xml"; }
         }
     }
 }
