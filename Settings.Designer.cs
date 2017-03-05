@@ -46,6 +46,18 @@ namespace LiveSplit.SaboteurTracker
             this.CB_Field5 = new System.Windows.Forms.ComboBox();
             this.C_EnableField5 = new System.Windows.Forms.CheckBox();
             this.CB_Field3 = new System.Windows.Forms.ComboBox();
+            this.C_EnableField6 = new System.Windows.Forms.CheckBox();
+            this.C_EnableField7 = new System.Windows.Forms.CheckBox();
+            this.C_EnableField8 = new System.Windows.Forms.CheckBox();
+            this.C_EnableField9 = new System.Windows.Forms.CheckBox();
+            this.C_EnableField10 = new System.Windows.Forms.CheckBox();
+            this.C_EnableField11 = new System.Windows.Forms.CheckBox();
+            this.CB_Field6 = new System.Windows.Forms.ComboBox();
+            this.CB_Field7 = new System.Windows.Forms.ComboBox();
+            this.CB_Field8 = new System.Windows.Forms.ComboBox();
+            this.CB_Field9 = new System.Windows.Forms.ComboBox();
+            this.CB_Field10 = new System.Windows.Forms.ComboBox();
+            this.CB_Field11 = new System.Windows.Forms.ComboBox();
             this.grpGraph = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -73,14 +85,14 @@ namespace LiveSplit.SaboteurTracker
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.grpPointerPath, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.grpGraph, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 173F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 396);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 440);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grpPointerPath
@@ -89,7 +101,7 @@ namespace LiveSplit.SaboteurTracker
             this.grpPointerPath.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpPointerPath.Location = new System.Drawing.Point(3, 3);
             this.grpPointerPath.Name = "grpPointerPath";
-            this.grpPointerPath.Size = new System.Drawing.Size(455, 164);
+            this.grpPointerPath.Size = new System.Drawing.Size(455, 325);
             this.grpPointerPath.TabIndex = 0;
             this.grpPointerPath.TabStop = false;
             this.grpPointerPath.Text = "Display Settings";
@@ -99,8 +111,6 @@ namespace LiveSplit.SaboteurTracker
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.CB_Field2, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.C_EnableField2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.CB_Field1, 1, 0);
@@ -110,16 +120,34 @@ namespace LiveSplit.SaboteurTracker
             this.tableLayoutPanel2.Controls.Add(this.CB_Field5, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.C_EnableField5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.CB_Field3, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField6, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField7, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField8, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField9, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField10, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.C_EnableField11, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field6, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field7, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field8, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field9, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field10, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Field11, 1, 10);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowCount = 11;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(449, 141);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(449, 302);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // CB_Field2
@@ -207,13 +235,121 @@ namespace LiveSplit.SaboteurTracker
             this.CB_Field3.Size = new System.Drawing.Size(357, 21);
             this.CB_Field3.TabIndex = 32;
             // 
+            // C_EnableField6
+            // 
+            this.C_EnableField6.AutoSize = true;
+            this.C_EnableField6.Location = new System.Drawing.Point(3, 138);
+            this.C_EnableField6.Name = "C_EnableField6";
+            this.C_EnableField6.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField6.TabIndex = 33;
+            this.C_EnableField6.Text = "Enable";
+            this.C_EnableField6.UseVisualStyleBackColor = true;
+            // 
+            // C_EnableField7
+            // 
+            this.C_EnableField7.AutoSize = true;
+            this.C_EnableField7.Location = new System.Drawing.Point(3, 165);
+            this.C_EnableField7.Name = "C_EnableField7";
+            this.C_EnableField7.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField7.TabIndex = 34;
+            this.C_EnableField7.Text = "Enable";
+            this.C_EnableField7.UseVisualStyleBackColor = true;
+            // 
+            // C_EnableField8
+            // 
+            this.C_EnableField8.AutoSize = true;
+            this.C_EnableField8.Location = new System.Drawing.Point(3, 192);
+            this.C_EnableField8.Name = "C_EnableField8";
+            this.C_EnableField8.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField8.TabIndex = 35;
+            this.C_EnableField8.Text = "Enable";
+            this.C_EnableField8.UseVisualStyleBackColor = true;
+            // 
+            // C_EnableField9
+            // 
+            this.C_EnableField9.AutoSize = true;
+            this.C_EnableField9.Location = new System.Drawing.Point(3, 219);
+            this.C_EnableField9.Name = "C_EnableField9";
+            this.C_EnableField9.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField9.TabIndex = 36;
+            this.C_EnableField9.Text = "Enable";
+            this.C_EnableField9.UseVisualStyleBackColor = true;
+            // 
+            // C_EnableField10
+            // 
+            this.C_EnableField10.AutoSize = true;
+            this.C_EnableField10.Location = new System.Drawing.Point(3, 246);
+            this.C_EnableField10.Name = "C_EnableField10";
+            this.C_EnableField10.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField10.TabIndex = 37;
+            this.C_EnableField10.Text = "Enable";
+            this.C_EnableField10.UseVisualStyleBackColor = true;
+            // 
+            // C_EnableField11
+            // 
+            this.C_EnableField11.AutoSize = true;
+            this.C_EnableField11.Location = new System.Drawing.Point(3, 273);
+            this.C_EnableField11.Name = "C_EnableField11";
+            this.C_EnableField11.Size = new System.Drawing.Size(59, 17);
+            this.C_EnableField11.TabIndex = 38;
+            this.C_EnableField11.Text = "Enable";
+            this.C_EnableField11.UseVisualStyleBackColor = true;
+            // 
+            // CB_Field6
+            // 
+            this.CB_Field6.FormattingEnabled = true;
+            this.CB_Field6.Location = new System.Drawing.Point(89, 138);
+            this.CB_Field6.Name = "CB_Field6";
+            this.CB_Field6.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field6.TabIndex = 39;
+            // 
+            // CB_Field7
+            // 
+            this.CB_Field7.FormattingEnabled = true;
+            this.CB_Field7.Location = new System.Drawing.Point(89, 165);
+            this.CB_Field7.Name = "CB_Field7";
+            this.CB_Field7.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field7.TabIndex = 40;
+            // 
+            // CB_Field8
+            // 
+            this.CB_Field8.FormattingEnabled = true;
+            this.CB_Field8.Location = new System.Drawing.Point(89, 192);
+            this.CB_Field8.Name = "CB_Field8";
+            this.CB_Field8.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field8.TabIndex = 41;
+            // 
+            // CB_Field9
+            // 
+            this.CB_Field9.FormattingEnabled = true;
+            this.CB_Field9.Location = new System.Drawing.Point(89, 219);
+            this.CB_Field9.Name = "CB_Field9";
+            this.CB_Field9.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field9.TabIndex = 42;
+            // 
+            // CB_Field10
+            // 
+            this.CB_Field10.FormattingEnabled = true;
+            this.CB_Field10.Location = new System.Drawing.Point(89, 246);
+            this.CB_Field10.Name = "CB_Field10";
+            this.CB_Field10.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field10.TabIndex = 43;
+            // 
+            // CB_Field11
+            // 
+            this.CB_Field11.FormattingEnabled = true;
+            this.CB_Field11.Location = new System.Drawing.Point(89, 273);
+            this.CB_Field11.Name = "CB_Field11";
+            this.CB_Field11.Size = new System.Drawing.Size(357, 21);
+            this.CB_Field11.TabIndex = 44;
+            // 
             // grpGraph
             // 
             this.grpGraph.Controls.Add(this.tableLayoutPanel3);
             this.grpGraph.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpGraph.Location = new System.Drawing.Point(3, 176);
+            this.grpGraph.Location = new System.Drawing.Point(3, 336);
             this.grpGraph.Name = "grpGraph";
-            this.grpGraph.Size = new System.Drawing.Size(455, 194);
+            this.grpGraph.Size = new System.Drawing.Size(455, 91);
             this.grpGraph.TabIndex = 1;
             this.grpGraph.TabStop = false;
             this.grpGraph.Text = "Graph";
@@ -228,7 +364,7 @@ namespace LiveSplit.SaboteurTracker
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(449, 175);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(449, 72);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -359,7 +495,7 @@ namespace LiveSplit.SaboteurTracker
             // 
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Settings";
-            this.Size = new System.Drawing.Size(461, 396);
+            this.Size = new System.Drawing.Size(461, 451);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpPointerPath.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -425,6 +561,66 @@ namespace LiveSplit.SaboteurTracker
                      typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
                     value
                 }).OrderBy(item => item.value).ToList();
+
+            CB_Field6.DisplayMember = "Description";
+            CB_Field6.ValueMember = "value";
+            CB_Field6.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
+
+            CB_Field7.DisplayMember = "Description";
+            CB_Field7.ValueMember = "value";
+            CB_Field7.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
+
+            CB_Field8.DisplayMember = "Description";
+            CB_Field8.ValueMember = "value";
+            CB_Field8.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
+
+            CB_Field9.DisplayMember = "Description";
+            CB_Field9.ValueMember = "value";
+            CB_Field9.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
+
+            CB_Field10.DisplayMember = "Description";
+            CB_Field10.ValueMember = "value";
+            CB_Field10.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
+
+            CB_Field11.DisplayMember = "Description";
+            CB_Field11.ValueMember = "value";
+            CB_Field11.DataSource = Enum.GetValues(typeof(elementType)).Cast<Enum>().Select(value =>
+                new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                     typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                }).OrderBy(item => item.value).ToList();
         }
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -452,5 +648,17 @@ namespace LiveSplit.SaboteurTracker
         private System.Windows.Forms.Button btnBackgroundColorCompleted;
         private System.Windows.Forms.Button btnOverrideTextColor;
         private System.Windows.Forms.Button btnColorCompleted;
+        private System.Windows.Forms.CheckBox C_EnableField6;
+        private System.Windows.Forms.CheckBox C_EnableField7;
+        private System.Windows.Forms.CheckBox C_EnableField8;
+        private System.Windows.Forms.CheckBox C_EnableField9;
+        private System.Windows.Forms.CheckBox C_EnableField10;
+        private System.Windows.Forms.CheckBox C_EnableField11;
+        private System.Windows.Forms.ComboBox CB_Field6;
+        private System.Windows.Forms.ComboBox CB_Field7;
+        private System.Windows.Forms.ComboBox CB_Field8;
+        private System.Windows.Forms.ComboBox CB_Field9;
+        private System.Windows.Forms.ComboBox CB_Field10;
+        private System.Windows.Forms.ComboBox CB_Field11;
     }
 }

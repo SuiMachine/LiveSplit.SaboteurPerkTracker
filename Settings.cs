@@ -13,6 +13,26 @@ namespace LiveSplit.SaboteurTracker
 {
     enum elementType
     {
+        [Description("Perks - Brawling")]
+        PerksBrawling,
+        [Description("Perks - Hardware")]
+        PerksHardware,
+        [Description("Perks - Sniping")]
+        PerksSniping,
+        [Description("Perks - Explosives")]
+        PerksExplosives,
+        [Description("Perks - Demolitions")]
+        PerksDemolitions,
+        [Description("Perks - Sabotage")]
+        PerksSabotage,
+        [Description("Perks - Mayhem")]
+        PerksMayhem,
+        [Description("Perks - Racing")]
+        PerksRacing,
+        [Description("Perks - Mechanics")]
+        PerksMechanics,
+        [Description("Perks - Evasion")]
+        PerksEvasion,
         [Description("Mayhem Tier 1")]
         Mayhem1,
         [Description("Mayhem Tier 2")]
@@ -23,8 +43,6 @@ namespace LiveSplit.SaboteurTracker
 
     partial class Settings : UserControl
     {
-        List<string> maplist = new List<string>();
-
         #region Properties
         public Color BackgroundColor { get; set; }
         public Color BackgroundColorCompleted { get; set; }
@@ -36,27 +54,31 @@ namespace LiveSplit.SaboteurTracker
         public int GraphWidth { get; set; }
         public int GraphHeight { get; set; }
 
-        //Memory Locations
-        public DeepPointer p_LevelName { get; set; }
-
-        //-- These DeepPointers were replaced with Trainer read class, because of the bug in DeepPointer class that occurs when module gets unloaded --
-        //public DeepPointer p_currentSecrets { get; set; }
-        //public DeepPointer p_levelKills { get; set; }
-        //public DeepPointer p_maxKills { get; set; }
-        //public DeepPointer p_shotsFired { get; set; }
-        //public DeepPointer p_shotsHit { get; set; }
-
         public bool field1Enabled { get; set; }
         public bool field2Enabled { get; set; }
         public bool field3Enabled { get; set; }
         public bool field4Enabled { get; set; }
         public bool field5Enabled { get; set; }
 
+        public bool field6Enabled { get; set; }
+        public bool field7Enabled { get; set; }
+        public bool field8Enabled { get; set; }
+        public bool field9Enabled { get; set; }
+        public bool field10Enabled { get; set; }
+        public bool field11Enabled { get; set; }
+
         public int field1DisplayMode { get; set; }
         public int field2DisplayMode { get; set; }
         public int field3DisplayMode { get; set; }
         public int field4DisplayMode { get; set; }
         public int field5DisplayMode { get; set; }
+        public int field6DisplayMode { get; set; }
+        public int field7DisplayMode { get; set; }
+        public int field8DisplayMode { get; set; }
+        public int field9DisplayMode { get; set; }
+        public int field10DisplayMode { get; set; }
+        public int field11DisplayMode { get; set; }
+
 
         public bool fieldCompletionColorsEnabled { get; set; }
         public bool fieldOverrideTextColor { get; set; }
@@ -66,7 +88,6 @@ namespace LiveSplit.SaboteurTracker
         public Settings()
         {
             InitializeComponent();
-            setAdresses();
             setStartValues();
 
             GraphWidth = 200;
@@ -87,17 +108,36 @@ namespace LiveSplit.SaboteurTracker
             C_EnableField3.DataBindings.Add("Checked", this, "field3Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
             C_EnableField4.DataBindings.Add("Checked", this, "field4Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
             C_EnableField5.DataBindings.Add("Checked", this, "field5Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField6.DataBindings.Add("Checked", this, "field6Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField7.DataBindings.Add("Checked", this, "field7Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField8.DataBindings.Add("Checked", this, "field8Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField9.DataBindings.Add("Checked", this, "field9Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField10.DataBindings.Add("Checked", this, "field10Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            C_EnableField11.DataBindings.Add("Checked", this, "field11Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
 
             CB_Field1.DataBindings.Add("SelectedIndex", this, "field1DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field2.DataBindings.Add("SelectedIndex", this, "field2DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field3.DataBindings.Add("SelectedIndex", this, "field3DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field4.DataBindings.Add("SelectedIndex", this, "field4DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field5.DataBindings.Add("SelectedIndex", this, "field5DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field6.DataBindings.Add("SelectedIndex", this, "field6DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field7.DataBindings.Add("SelectedIndex", this, "field7DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field8.DataBindings.Add("SelectedIndex", this, "field8DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field9.DataBindings.Add("SelectedIndex", this, "field9DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field10.DataBindings.Add("SelectedIndex", this, "field10DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field11.DataBindings.Add("SelectedIndex", this, "field11DisplayMode", false, DataSourceUpdateMode.OnPropertyChanged);
 
             CB_Field2.DataBindings.Add("Enabled", this, "field2Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field3.DataBindings.Add("Enabled", this, "field3Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field4.DataBindings.Add("Enabled", this, "field4Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
             CB_Field5.DataBindings.Add("Enabled", this, "field5Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field6.DataBindings.Add("Enabled", this, "field6Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field7.DataBindings.Add("Enabled", this, "field7Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field8.DataBindings.Add("Enabled", this, "field8Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field9.DataBindings.Add("Enabled", this, "field9Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field10.DataBindings.Add("Enabled", this, "field10Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+            CB_Field11.DataBindings.Add("Enabled", this, "field11Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
+
 
             AddComboboxDataSources();
 
@@ -111,11 +151,25 @@ namespace LiveSplit.SaboteurTracker
             field3Enabled = false;
             field4Enabled = false;
             field5Enabled = false;
+            field6Enabled = false;
+            field7Enabled = false;
+            field8Enabled = false;
+            field9Enabled = false;
+            field10Enabled = false;
+            field11Enabled = false;
+
             field1DisplayMode = (int)elementType.Mayhem1;
             field2DisplayMode = (int)elementType.Mayhem1;
             field3DisplayMode = (int)elementType.Mayhem1;
             field4DisplayMode = (int)elementType.Mayhem1;
             field5DisplayMode = (int)elementType.Mayhem1;
+            field6DisplayMode = (int)elementType.Mayhem1;
+            field7DisplayMode = (int)elementType.Mayhem1;
+            field8DisplayMode = (int)elementType.Mayhem1;
+            field9DisplayMode = (int)elementType.Mayhem1;
+            field10DisplayMode = (int)elementType.Mayhem1;
+            field11DisplayMode = (int)elementType.Mayhem1;
+
             fieldCompletionColorsEnabled = false;
             fieldOverrideTextColor = false;
 
@@ -124,16 +178,6 @@ namespace LiveSplit.SaboteurTracker
             OverrideTextColor = Color.White;
             ComplitionColorIncomplete = Color.White;
             ComplitionColorCompleted = Color.White;
-        }
-
-        private void setAdresses()
-        {
-            p_LevelName = new DeepPointer(0x480C5D);
-            //p_currentSecrets = new DeepPointer(0x000091D4, 0x6a0, 0x16dc);
-            //p_levelKills = new DeepPointer(0x000091D4, 0x6a0, 0x16f0);
-            //p_maxKills = null;
-            //p_shotsFired = new DeepPointer(0x000091D4, 0x6a0, 0x16e4);
-            //p_shotsHit = new DeepPointer(0x000091D4, 0x6a0, 0x16e8);
         }
 
         private void ColorButtonClick(object sender, EventArgs e)
@@ -156,6 +200,18 @@ namespace LiveSplit.SaboteurTracker
             field4DisplayMode = SettingsHelper.ParseInt(element["F4DisplayMode"]);
             field5Enabled = SettingsHelper.ParseBool(element["F5Enabled"]);
             field5DisplayMode = SettingsHelper.ParseInt(element["F5DisplayMode"]);
+            field6Enabled = SettingsHelper.ParseBool(element["F6Enabled"]);
+            field6DisplayMode = SettingsHelper.ParseInt(element["F6DisplayMode"]);
+            field7Enabled = SettingsHelper.ParseBool(element["F7Enabled"]);
+            field7DisplayMode = SettingsHelper.ParseInt(element["F7DisplayMode"]);
+            field8Enabled = SettingsHelper.ParseBool(element["F8Enabled"]);
+            field8DisplayMode = SettingsHelper.ParseInt(element["F8DisplayMode"]);
+            field9Enabled = SettingsHelper.ParseBool(element["F9Enabled"]);
+            field9DisplayMode = SettingsHelper.ParseInt(element["F9DisplayMode"]);
+            field10Enabled = SettingsHelper.ParseBool(element["F10Enabled"]);
+            field10DisplayMode = SettingsHelper.ParseInt(element["F10DisplayMode"]);
+            field11Enabled = SettingsHelper.ParseBool(element["F11Enabled"]);
+            field11DisplayMode = SettingsHelper.ParseInt(element["F11DisplayMode"]);
 
             fieldOverrideTextColor = SettingsHelper.ParseBool(element["fieldOverrideTextColor"]);
             fieldCompletionColorsEnabled = SettingsHelper.ParseBool(element["fieldCompletionColorsEnabled"]);
@@ -193,6 +249,18 @@ namespace LiveSplit.SaboteurTracker
             SettingsHelper.CreateSetting(document, parent, "F4DisplayMode", field4DisplayMode) ^
             SettingsHelper.CreateSetting(document, parent, "F5Enabled", field5Enabled) ^
             SettingsHelper.CreateSetting(document, parent, "F5DisplayMode", field5DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F6Enabled", field6Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F6DisplayMode", field6DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F7Enabled", field7Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F7DisplayMode", field7DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F8Enabled", field8Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F8DisplayMode", field8DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F9Enabled", field9Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F9DisplayMode", field9DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F10Enabled", field10Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F10DisplayMode", field10DisplayMode) ^
+            SettingsHelper.CreateSetting(document, parent, "F11Enabled", field11Enabled) ^
+            SettingsHelper.CreateSetting(document, parent, "F11DisplayMode", field11DisplayMode) ^
 
             SettingsHelper.CreateSetting(document, parent, "fieldOverrideTextColor", fieldOverrideTextColor) ^
             SettingsHelper.CreateSetting(document, parent, "fieldCompletionColorsEnabled", fieldCompletionColorsEnabled) ^

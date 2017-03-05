@@ -1,4 +1,20 @@
 <updates>
+    <update version="1.2">
+        <files>
+            <file path="Components/LiveSplit.SaboteurTracker.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>Combined methods for displaying Perks according (some may not work).</change>
+        </changelog>
+    </update>
+    <update version="1.1">
+        <files>
+            <file path="Components/LiveSplit.SaboteurTracker.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>Idk, forgot about notes. I think it was suppose to be GOG support, but nobody gave me pointers.</change>
+        </changelog>
+    </update>
     <update version="1.0">
         <files>
             <file path="Components/LiveSplit.SaboteurTracker.dll" status="changed"/>
